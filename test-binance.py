@@ -68,9 +68,18 @@ print(client.response.headers)
 # f.close()
 # print(len(prices))
 
+global_count = 0
+start = time.time()
+for i in range(100):
+    prices = client.futures_symbol_ticker()
+    end = time.time()
+    global_count = i
 
+    if ((end-start) * 10**3) >= 10000:
+        break
+print("The time of execution of above program is :", (end-start) * 10**3, "ms")
 
-
+print("Total: ", global_count+1)
 
 # for price in prices:
 #     if "WBTCUSDT" in price["symbol"]:
