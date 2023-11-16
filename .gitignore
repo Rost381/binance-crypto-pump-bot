@@ -1,5 +1,10 @@
+*.session
+*.session-journal
+*.ini
+*.key
 .env
 assets/
 logs/
 venv/
+.venv/
 __pycache__
