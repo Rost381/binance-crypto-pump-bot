@@ -30,7 +30,7 @@ start = time.time()
 prices = client.futures_symbol_ticker()
 
 end = time.time()
-print("The time of execution of above program is :",   (end-start) * 10**3, "ms")
+print("The time of execution ALL program is :",   (end-start) * 10**3, "ms")
 
 #---------
 start = time.time()
@@ -38,13 +38,13 @@ start = time.time()
 prices = client.futures_symbol_ticker(symbol="BTCUSDT")
 
 end = time.time()
-print("The time of execution of above program is :", (end-start) * 10**3, "ms")
+print("The time of execution of BTCUSDT program is :", (end-start) * 10**3, "ms")
 
 #---------
 start = time.time()
 prices = client.futures_symbol_ticker(symbol="LOOMUSDT")
 end = time.time()
-print("The time of execution of above program is :", (end-start) * 10**3, "ms")
+print("The time of execution of LOOMUSDT program is :", (end-start) * 10**3, "ms")
 
 #---------
 
@@ -52,10 +52,10 @@ print("The time of execution of above program is :", (end-start) * 10**3, "ms")
 start = time.time()
 res = client.get_exchange_info()
 end = time.time()
-print("The time of execution of above program is :", (end-start) * 10**3, "ms")
+print("The time of execution of get_exchange_info program is :", (end-start) * 10**3, "ms")
 
 
-print(client.response.headers)
+# print(client.response.headers)
 
 # input("Press 'Enter' to continue")
 # f=open('coins.csv', 'a') 
@@ -68,18 +68,18 @@ print(client.response.headers)
 # f.close()
 # print(len(prices))
 
-global_count = 0
-start = time.time()
-for i in range(100):
-    prices = client.futures_symbol_ticker()
-    end = time.time()
-    global_count = i
+# global_count = 0
+# start = time.time()
+# for i in range(100):
+#     prices = client.futures_symbol_ticker()
+#     end = time.time()
+#     global_count = i
 
-    if ((end-start) * 10**3) >= 10000:
-        break
-print("The time of execution of above program is :", (end-start) * 10**3, "ms")
+#     if ((end-start) * 10**3) >= 10000:
+#         break
+# print("The time of execution of above program is :", (end-start) * 10**3, "ms")
 
-print("Total: ", global_count+1)
+# print("Total: ", global_count+1)
 
 # for price in prices:
 #     if "WBTCUSDT" in price["symbol"]:

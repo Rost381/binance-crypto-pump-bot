@@ -12,6 +12,24 @@ async def main():
     client = await AsyncClient.create(api_key, api_secret)
 
     start = time.time()
+    prices = await client.futures_symbol_ticker()
+    # print(client.response.headers)
+    end = time.time()
+    print("The time of execution ALL program is :",   (end-start) * 10**3, "ms")
+
+    start = time.time()
+    prices = await client.futures_symbol_ticker(symbol="BTCUSDT")
+    # print(client.response.headers)
+    end = time.time()
+    print("The time of execution of BTCUSDT program is :", (end-start) * 10**3, "ms")
+
+    start = time.time()
+    prices = await client.futures_symbol_ticker(symbol="LOOMUSDT")
+    # print(client.response.headers)
+    end = time.time()
+    print("The time of execution of LOOMUSDT program is :", (end-start) * 10**3, "ms")
+
+    start = time.time()
     res = await client.get_exchange_info()
     # print(client.response.headers)
     end = time.time()
